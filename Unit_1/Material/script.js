@@ -18,11 +18,12 @@ document.getElementById('out').innerHTML = '<b>2020</b>';
 
 document.querySelector('h2.header').innerHTML = 5; // document.querySelector('h2.header') - захват элемента 'h2'по классу с выбором присвоенного ему имени, т.е. конкретизация условия захвата h2
 document.querySelector('.header').innerHTML = 15; // захват элемента 'h2'с HTML по классу header
-document.querySelector('#one').innerHTML = 777; // захват элемента 'one'с HTML по id (#) - есть # - Приём по CSS
+document.querySelector('#one').innerHTML = 777; // захват элемента 'one'с HTML по id (#) - есть # - Обращение через CSS-селекторы
 document.getElementById('one').innerHTML = 888; // нет #
 
 let b; // var a - устарело // let - переменная - ящик для хранения определенной информации, переменная объявляется один раз 
-let a = querySelector('#one'); // внутрь а получил параграф
+let a = document.querySelector('#one'); // внутрь перменной 'а' получил параграф
 let c; // объявление переменной
-c = querySelector('.header'); // присвоение переменной 
-a.innerHTML = 999;
+c = document.querySelector('.header'); // присвоение переменной 
+a.innerHTML = 999; // нужно задавать правильное имя переменной, !new - ошибка
+c.innerHTML = 6666;
