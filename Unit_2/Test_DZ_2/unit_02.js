@@ -176,7 +176,9 @@ let inputT19_2 = document.querySelector('.i-19-2');
 let outputB19 = document.querySelector('.out-19');
 
 function t19() {
-    let t = inputT19_1.value + inputT19_2.value;
+    let valueof19_1 = inputT19_1.value;
+    let valueof19_2 = inputT19_2.value;
+    let t = +valueof19_1+ +valueof19_2;
     t = parseInt(t);
     outputB19.innerHTML = t;
 }
@@ -185,9 +187,18 @@ document.querySelector('.b-19').onclick = t19;
 
 // Task 20
 // Создайте опросник, куда пользователь может ввести имя, фамилию, возраст, род занятий. И кнопку. По нажатию кнопки выведите на страницу предложение 'Уважаемый Иван, Иванов, ваш возраст 33 года, по професси вы ...' куда поставьте соответствующие данные из inputов.
+let inputT20_1 = document.querySelector('.i-20-1');
+let inputT20_2 = document.querySelector('.i-20-2');
+let inputT20_3 = document.querySelector('.i-20-3');
+let inputT20_4 = document.querySelector('.i-20-4');
+let outputB20 = document.querySelector('.out-20');
 
 function t20() {
-
+let valueof20_1 = inputT20_1.value;
+let valueof20_2 = inputT20_2.value;
+let valueof20_3 = inputT20_3.value;
+let valueof20_4 = inputT20_4.value;
+outputB20.innerHTML = 'Уважаемый'+ ' ' + valueof20_1+ ' ' +valueof20_2+ ' '+ 'ваш возраст'+ ' ' + valueof20_3 + ' ' + 'года' + ' ' + 'по профессии вы' + ' ' + valueof20_4;
 }
 
 document.querySelector('.b-20').onclick = t20;
