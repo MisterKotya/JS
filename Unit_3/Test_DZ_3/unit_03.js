@@ -137,8 +137,13 @@ let output8 = document.querySelector('.out-8');
 
 function f8() {
     let num = +input8.value;
-    if () {
-
+    switch (num) {
+        case 1:
+            output8.innerHTML = 'one';
+        case 2:
+            output8.innerHTML = 'two';
+        case 3:
+            output8.innerHTML = 'three';
     }
 
 }
