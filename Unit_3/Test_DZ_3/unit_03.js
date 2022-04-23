@@ -261,21 +261,23 @@ document.querySelector('.b-13').onclick = f13;
 // Дан input i-141 и input-142, type=number.  Дан select s-143, который содержит две операции - +, -, *, / . Дана кнопка b-14, при нажатии на которую срабатывает функция f14. 
 //Функция выводит в out-14 результат операций выбранной в 3-м select к числам введенным в первом и втором input. Например выбрано 1 13 +, 
 //нужно вывести результат операции 1+13 т.е.  14.
-let input14_1 = +document.querySelector('.i-141').value;
+/*let input14_1 = +document.querySelector('.i-141').value;
 let input14_2 = +document.querySelector('.i-142').value;
-let selec14 = document.querySelector('.s-143'.value);
-let output14 = document.querySelector('.out-14');
+let selec14 = document.querySelector('.s-143').value;
+let output14 = document.querySelector('.out-14');*/
 
 function f14(){
-    let a = +document.querySelector('.i-141').value;
-    let b = +document.querySelector('.i-142').value;
+let input14_1 = +document.querySelector('.i-141').value;
+let input14_2 = +document.querySelector('.i-142').value;
+let selec14 = document.querySelector('.s-143').value;
+let output14 = document.querySelector('.out-14');
     if (selec14 === '+') {
-        output14.innerHTML = a+b;
+        output14.innerHTML = input14_1+input14_2;
     }
     if (selec14 === '-') {
-        output14.innerHTML = a-b;
+        output14.innerHTML = input14_1-input14_2;
     }
-
+}
 
 document.querySelector('.b-14').onclick = f14;
 
@@ -284,11 +286,20 @@ document.querySelector('.b-14').onclick = f14;
 // Дан select s-151 и s-152, каждый из которых содержит 1 и 0.  Дан select s-153, который содержит две операции - && и || . 
 // Дана кнопка b-15, при нажатии на которую срабатывает функция f15. Функция выводит в out-15 результат логических операций выбранных 
 //в 3 select к числам выбранным в первом и втором select. Например выбрано 1 1 &&, нужно вывести результат операции 1&&1 т.е. 1 или 0.
-
-
+let output15 = document.querySelector('.out-15');
 
 function f15() {
+    let select1 = +document.querySelector('.s-151').value;
+    let select2 = +document.querySelector('.s-152').value;
+    let select3 = document.querySelector('.s-153').value;
+
+    if (select3 == '&&') {
+        document.querySelector('.out-15').innerHTML = select1 && select2;
+    }
+    else {
+        document.querySelector('.out-15').innerHTML = select1 || select2;
+    }
 
 }
-
-document.querySelector('.b-15').onclick = f15;
+ 
+ document.querySelector('.b-15').onclick = f15;
