@@ -2,7 +2,7 @@
 // Создайте button.b-1 - при нажатии на него выводите alert с номером задачи. Номер задачи просто пропишите вручную.
 
 function f1() {
-
+alert('Task-1');
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -12,7 +12,7 @@ document.querySelector('.b-1').onclick = f1;
 // Создайте input.b-2 type=button - при нажатии на него выводите alert с номером задачи. Номер задачи просто пропишите вручную.
 
 function f2() {
-
+alert('Task-2');
 }
 
 document.querySelector('.b-2').onclick = f2;
@@ -22,16 +22,24 @@ document.querySelector('.b-2').onclick = f2;
 // Создайте p.p-3 - при нажатии на него выводите alert с номером задачи.
 
 function f3() {
-
+    alert('И да, это он!!!');
 }
 
 document.querySelector('.p-3').onclick = f3;
 
 
-// Task 4. Создайте input(checkbox).i-4 и button.b-4 - при нажатии на кнопку выводите true если checkbox выбран и false если не выбран. Вывод везде в задачах, где не указано другое, осуществляется в div.out-номер задачи. В данном случае div.out-4
+// Task 4. Создайте input(checkbox).i-4 и button.b-4 - при нажатии на кнопку выводите true если checkbox выбран и false если не выбран. 
+//Вывод везде в задачах, где не указано другое, осуществляется в div.out-номер задачи. В данном случае div.out-4
 
 function f4() {
-
+    let output4 = document.querySelector('.out-4');
+    let check4 = document.querySelector('.i-4'); // <input type="checkbox" class="i-4"></div>
+    if (check4.checked) { // проверка checkbox посредством checked - нажат или нет
+        output4.innerHTML = true;
+    }
+    else {
+        output4.innerHTML = false;
+    }
 }
 
 document.querySelector('.b-4').onclick = f4;
@@ -40,6 +48,14 @@ document.querySelector('.b-4').onclick = f4;
 //Создайте input(checkbox).i-5 и button.b-5. Для checkbox добавьте value="task-5" - при нажатии на кнопку b-5 выводите value checkbox если checkbox выбран и false если не выбран. Вывод везде в задачах, где не указано другое, осуществляется в div.out-номер задачи. В данном случае div.out-5
 
 function f5() {
+    let output5 = document.querySelector('.out-5');
+    let check5 = document.querySelector('.i-5');
+    if (check5.checked) {
+        output5.innerHTML = 'task-5';
+    }
+    else {
+        output5.innerHTML = false;
+    }
 
 }
 
@@ -50,16 +66,29 @@ document.querySelector('.b-5').onclick = f5;
 //Создайте input(hidden).i-6 и button.b-6 - при нажатии на кнопку выводите value из input в div.out-6
 
 function f6() {
+    let output6 = document.querySelector('.out-6');
+    output6.innerHTML = 8987;
 
 }
 
 document.querySelector('.b-6').onclick = f6;
 
 // Task 7.
-// Создайте input(password).i-7 и button.b-7 - при нажатии на кнопку выводите в div.out-71 value прописанное в input. В .out-72 выводите 1 если длина пароля больше или равна 6 или 0 если меньше. Для подсчета количества символов в строке используйте length.
+// Создайте input(password).i-7 и button.b-7 - при нажатии на кнопку выводите в div.out-71 value прописанное в input. 
+//В .out-72 выводите 1 если длина пароля больше или равна 6 или 0 если меньше. Для подсчета количества символов в строке используйте length.
 
 function f7() {
+let input7 = document.querySelector('.i-7').value;
+let output71 = document.querySelector('.out-71');
+let output72 = document.querySelector('.out-72');
+output71.innerHTML = input7;
 
+if (input7.length >= 6) {
+    output72.innerHTML = 1;
+}
+else {
+    output72.innerHTML = 0;
+}
 }
 
 document.querySelector('.b-7').onclick = f7;

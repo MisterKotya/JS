@@ -15,15 +15,27 @@
 </head>
 
 <body>
-
     <div class="container">
-
-        <h1 class="text-center">input, range, textarea, checkbox...</h1>
+        <!-- <h1 class="text-center">input, range, textarea, checkbox...</h1>
         <h2 class="text-cente">курс JavaScript 2.0 <br> Лущенко Александр</h2>
 
-<input type="range" id="one" min="0" max="200">
-<button>Push</button>
-<span></span>
+       <input type="range" id="one" min="0" max="200" value="30">
+       <button>Push</button>
+       <span>30</span> Точка отсчета 100 или начальное значение 30 -->
+       <!--value присваивается всем значениям ввода(input)-->
+<hr>
+
+<input type="checkbox" id="i2" value="hello">
+<label for="i2">Click me</label> <!--Checkbox и надпись для него через тег label for=""-->
+<button id="btn-1">Push</button>
+<hr>
+
+<form action=""> <!--Форма - это всегда ввод и вывод данных--> 
+    <!--action - это адрес, на который будет отправлен браузер после действий внутри формы или когда он пуст, то просто происходит перезагрузка-->
+    <textarea name="" id="two" cols="30" rows="10" name="n1"></textarea>
+    <input type="text" id="three" name="n2">
+    <button id="btn-2">Push</button>
+</form>
 
 
     </div>
