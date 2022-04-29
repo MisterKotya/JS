@@ -43,23 +43,23 @@ document.querySelector('#btn-1').onclick = () => { // Вывод в консол
     console.log(document.querySelector('#i2').value);
     let myCheckBox = document.querySelector('#i2');
     console.log(myCheckBox.checked);
-if (myCheckBox.checked) {
-    console.log('Нажат'); 
-}
-else {
-    console.log('Не нажат'); 
-}
+    if (myCheckBox.checked) {    // checked) - проверено
+        console.log('Нажат');
+    }
+    else {
+        console.log('Не нажат');
+    }
 }
 
 document.querySelector('#btn-2').onclick = (event/*объект события*/) => {   // Вывод в консоль через textarea различных написаний
-event.preventDefault(); // метод, который тормозит перезагрузку страницы
-//  let text = document.querySelector('#two');
-//  console.log(text.value);
-//  text.value = 'one'; // присваивание различных значений в поле textarea
-let form = document.querySelector('form');
-console.log(form); // переменная form
-console.log(form.elements.two.value); // св-во elements, обращение по id или по name
-console.log(form.elements.three.value);
+    event.preventDefault(); // метод, который тормозит перезагрузку страницы
+    //  let text = document.querySelector('#two');
+    //  console.log(text.value);
+    //  text.value = 'one'; // присваивание различных значений в поле textarea
+    let form = document.querySelector('form');
+    console.log(form); // переменная form
+    console.log(form.elements.two.value); // св-во elements, обращение по id или по name
+    console.log(form.elements.three.value);
 }
 
 
@@ -80,3 +80,30 @@ function f4() {
 document.querySelector('.b-4').onclick = f4;
 
 //<input type="hidden"></input> - хранить и отправлять информацию, скрытую от пользователей.
+// <input type="radio" id="radioButton"> - используется для создания группы радиокнопок (переключателей), описывающих набор взаимосвязанных параметров,
+// отображаются как небольшие кружки, которые заполняются или подсвечиваются при наведении.
+
+
+
+// Task 10
+// >Создайте input(color).i-10 и button.b-10 - при нажатии на кнопку окрашивайте div.out-10 выбранным цветом (имеется ввиду .style.background = ).
+
+
+function f10() {
+    let output10 = document.querySelector('.out-10');
+    let input10 = document.querySelector('.i-10');
+    let button10 = document.querySelector('.b-10');
+    button10.style.background = input10.value; // окрашивает саму кнопку button10 в тот же цвет, что задан в input
+}
+
+document.querySelector('.b-10').onclick = f10;
+
+
+// Task 13
+//  Создайте input(range).i-13. При изменении положения ползунка i-13 выводите значение в out-13. Для события используйте oninput.
+
+function f13() {
+    console.log(document.querySelector('.i-13').value);
+    document.querySelector('.out-13').innerHTML = document.querySelector('.i-13').value;
+}
+

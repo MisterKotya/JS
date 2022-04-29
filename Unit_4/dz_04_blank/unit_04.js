@@ -2,7 +2,7 @@
 // Создайте button.b-1 - при нажатии на него выводите alert с номером задачи. Номер задачи просто пропишите вручную.
 
 function f1() {
-alert('Task-1');
+    alert('Task-1');
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -12,7 +12,7 @@ document.querySelector('.b-1').onclick = f1;
 // Создайте input.b-2 type=button - при нажатии на него выводите alert с номером задачи. Номер задачи просто пропишите вручную.
 
 function f2() {
-alert('Task-2');
+    alert('Task-2');
 }
 
 document.querySelector('.b-2').onclick = f2;
@@ -78,25 +78,29 @@ document.querySelector('.b-6').onclick = f6;
 //В .out-72 выводите 1 если длина пароля больше или равна 6 или 0 если меньше. Для подсчета количества символов в строке используйте length.
 
 function f7() {
-let input7 = document.querySelector('.i-7').value;
-let output71 = document.querySelector('.out-71');
-let output72 = document.querySelector('.out-72');
-output71.innerHTML = input7;
+    let input7 = document.querySelector('.i-7').value;
+    let output71 = document.querySelector('.out-71');
+    let output72 = document.querySelector('.out-72');
+    output71.innerHTML = input7;
 
-if (input7.length >= 6) {
-    output72.innerHTML = 1;
-}
-else {
-    output72.innerHTML = 0;
-}
+    if (input7.length >= 6) {
+        output72.innerHTML = 1;
+    }
+    else {
+        output72.innerHTML = 0;
+    }
 }
 
 document.querySelector('.b-7').onclick = f7;
 
 // Task 8.
-// Создайте div.out-8 и кнопку .b-8. При нажатии кнопки создавайте внутри div.out-8 элемент input.i-81 и кнопку .b-81 (innerHTML). Добавьте на созданную кнопку событие клик и запуск функции f81. Функция должна в .out-81 выводить value созданного input.i-81.
+// Создайте div.out-8 и кнопку .b-8. При нажатии кнопки создавайте внутри div.out-8 элемент input.i-81 и кнопку .b-81 (innerHTML). 
+// Добавьте на созданную кнопку событие клик и запуск функции f81. Функция должна в .out-81 выводить value созданного input.i-81.
 
 function f8() {
+    let output8 = document.querySelector('.out-8');
+    output8.innerHTML = '<input type="text" class="i-81" value=""><button class="b-81"></button>';
+    document.querySelector('.b-81').onclick = f81;
     // кнопку создаем через ....innerHTML = '<button....</button>
     // т.е. как строку и в ставляем на страницу
     //  потом получаем кнопку со страницы и вешаем событие
@@ -104,8 +108,9 @@ function f8() {
     //
 }
 
-function f81 () {
-
+function f81() {
+    let output81 = document.querySelector('.out-81');
+    output81.innerHTML = document.querySelector('.i-81').value;
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -114,6 +119,14 @@ document.querySelector('.b-8').onclick = f8;
 //Создайте один input(radio).r-9  и button.b-9 - при нажатии на button если radio.r-9 выбран (активен, checked) выводите в .out-9 - value прописанное в r-9, либо 0 если не активен. 
 
 function f9() {
+    let output9 = document.querySelector('.out-9');
+    let input9 = document.querySelector('.r-9');
+    if (input9.checked) {
+        output9.innerHTML = 6572;
+    }
+    else {
+        output9.innerHTML = 0;
+    }
 
 }
 
@@ -124,7 +137,10 @@ document.querySelector('.b-9').onclick = f9;
 
 
 function f10() {
-
+    let output10 = document.querySelector('.out-10');
+    let input10 = document.querySelector('.i-10');
+    let button10 = document.querySelector('.b-10');
+    output10.style.background = input10.value;
 }
 
 document.querySelector('.b-10').onclick = f10;
@@ -134,16 +150,21 @@ document.querySelector('.b-10').onclick = f10;
 //   Создайте input(color).i-111 и input(color).i-112- два элемента и button.b-11 - при нажатии на кнопку присвойте цвет из первого input в value второго.
 
 function f11() {
-
+    let input111 = document.querySelector('.i-111');
+    let input112 = document.querySelector('.i-112');
+    let colorValue = input111.value;
+    input111.value = input112.value;
+    input112.value = colorValue;
 }
-
 document.querySelector('.b-11').onclick = f11;
 
 // Task 12
 //   Создайте input(date).i-12 и button.b-12 - при нажатии на кнопку выводите на в  out-12 выбранную в input дату.
 
 function f12() {
-
+    let input12 = document.querySelector('.i-12');
+    let output12 = document.querySelector('.out-12');
+    output12.innerHTML = input12.value;
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -152,8 +173,12 @@ document.querySelector('.b-12').onclick = f12;
 //  Создайте input(range).i-13. При изменении положения ползунка i-13 выводите значение в out-13. Для события используйте oninput.
 
 function f13() {
-
+    console.log(document.querySelector('.i-13').value);
+    document.querySelector('.out-13').innerHTML = document.querySelector('.i-13').value;
 }
+// document.querySelector('.i-13').oninput = () => {
+//     console.log(document.querySelector('.i-13').value);
+// }
 
 document.querySelector('.i-13').oninput = f13;
 
