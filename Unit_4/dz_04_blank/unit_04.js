@@ -139,7 +139,6 @@ document.querySelector('.b-9').onclick = f9;
 function f10() {
     let output10 = document.querySelector('.out-10');
     let input10 = document.querySelector('.i-10');
-    let button10 = document.querySelector('.b-10');
     output10.style.background = input10.value;
 }
 
@@ -186,9 +185,9 @@ document.querySelector('.i-13').oninput = f13;
 // Создайте text-area.t-14 и button.b-14 - при нажатии на кнопку выводите на в out-14 текст введенный в t-14.
 
 function f14() {
-let textarea14 = document.querySelector('.t-14');
-let output14 = document.querySelector('.out-14');
-output14.innerHTML=textarea14.value;
+    let textarea14 = document.querySelector('.t-14');
+    let output14 = document.querySelector('.out-14');
+    output14.innerHTML = textarea14.value;
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -197,11 +196,14 @@ document.querySelector('.b-14').onclick = f14;
 // Создайте text-area.t-15, input.i-15 и button.b-15 - при нажатии на кнопку выводите текст из input.i-15 в textarea.t-15 и на страницу в out-15.
 
 function f15() {
-    let input15 = document.querySelector('.i-15').value;
-    let textarea15 = document.querySelector('.t-15').value;
+    let input15 = document.querySelector('.i-15');
+    let textarea15 = document.querySelector('.t-15');
     let output15 = document.querySelector('.out-15');
+    let textInput = input15.value;
     input15.value = textarea15.value;
-    textarea15.value = output15.innerHTML
+    textarea15.value = textInput;
+    output15.innerHTML = textarea15.value;
+
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -268,7 +270,7 @@ function f20(e) {
     console.log(form.elements);
     console.log(form.elements['username'].value); // так можно обратиться к элементу внутри формы
     console.log(form.elements['password'].value);
-    output20.innerHTML = console.log(form.elements['username'].value) + ' ' + console.log(form.elements['password'].value);
+    output20.innerHTML = form.elements['username'].value + ' ' + form.elements['password'].value;
 
 }
 
