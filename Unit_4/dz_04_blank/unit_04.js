@@ -199,11 +199,8 @@ function f15() {
     let input15 = document.querySelector('.i-15');
     let textarea15 = document.querySelector('.t-15');
     let output15 = document.querySelector('.out-15');
-    let textInput = input15.value;
-    input15.value = textarea15.value;
-    textarea15.value = textInput;
-    output15.innerHTML = textarea15.value;
-
+    textarea15.value = input15.value;
+    output15.innerHTML = input15.value;
 }
 
 document.querySelector('.b-15').onclick = f15;

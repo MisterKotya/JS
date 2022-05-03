@@ -3,20 +3,30 @@
 //     1 2 3 4 5 6 7 8 9 ... 49 50
 // от 1 до 50 включительно. Разделитель - пробел. Задача решается с помощью цикла.
 
+let out1 = '';
 
 function t1() {
-
+for (let i = 1; i <= 50; i++) {
+    out1 += i + ' ';
+}
+document.querySelector('.out-1').innerHTML = out1;
 }
 
 document.querySelector('.b-1').onclick = t1;
+
 
 //  Task 2
 // Кнопка b-2 запускает функцию t2. Функция должна выводить в out-2 строку вида:
 //     2 4 6 ... 122
 // от 2 до 122 c шагом 2. Разделитель - пробел. Задача решается с помощью цикла.
 
-function t2() {
+let out2 = '';
 
+function t2() {
+for (let i = 2; i <= 122; i= i + 2) {
+    out2 += i + ' ';
+}
+document.querySelector('.out-2').innerHTML = out2;
 }
 
 document.querySelector('.b-2').onclick = t2;
@@ -27,8 +37,13 @@ document.querySelector('.b-2').onclick = t2;
 //     25 24 23 22 . . 7
 // от 25 до 7 c шагом 1. Разделитель - пробел. Задача решается с помощью цикла.
 
-function t3() {
+let out3 = '';
 
+function t3() {
+for (let i = 25; i >= 7; i--) {
+    out3 += i + ' ';
+}
+document.querySelector('.out-3').innerHTML = out3;
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -38,9 +53,13 @@ document.querySelector('.b-3').onclick = t3;
 //     77_74_71_68_65_62_ ... _38_35_
 // от 77 до 35 c шагом 3. Разделитель - знак подчеркивания. Задача решается с помощью цикла.
 
+let out4 = '';
 
 function t4() {
-
+for (let i = 77; i >= 35; i = i - 3 ) {
+out4 += i + '_';
+}
+document.querySelector('.out-4').innerHTML = out4;
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -51,8 +70,18 @@ document.querySelector('.b-4').onclick = t4;
 //     1_*2_**3_*4_** ... 17_*
 // от 1 до 17 c шагом 1. Разделитель - знак подчеркивания и звездочка (если число нечетное, и две звездочки если четное). Задача решается с помощью цикла.
 
-function t5() {
+let out5 = '';
 
+function t5() {
+for (let i = 1; i <= 17; i++) {
+if (i % 2 == 1) {
+    out5 += i + '_' + '*';
+}
+else {
+    out5 += i + '_' + '**';
+}
+}
+document.querySelector('.out-5').innerHTML = out5;
 }
 
 document.querySelector('.b-5').onclick = t5;
@@ -68,8 +97,14 @@ document.querySelector('.b-5').onclick = t5;
 //Задача решается с помощью цикла. В каждой итерации цикл выводит 6 звездочек без пробелов. Перенос строки - br. Количество строк (итераций, повторений) цикла вводит пользователь в i-6.
 //
 
-function t6() {
+let out6 = '';
 
+function t6() {
+    let input6 = document.querySelector('.i-6');
+for (let i = 0; i < input6.value; i++ ){
+ out6 += '******' + '<br>';
+}
+document.querySelector('.out-6').innerHTML = out6; // очищаем поле
 }
 
 document.querySelector('.b-6').onclick = t6;
@@ -82,8 +117,14 @@ document.querySelector('.b-6').onclick = t6;
 //     4 3 2 1 0
 // Задача решается с помощью цикла.
 
-function t7() {
+let out7 = '';
 
+function t7() {
+    let input7 = document.querySelector('.i-7').value;
+    for (let i = input7; i >= 0; i--) {
+         out7 += i + ' ';
+    }
+document.querySelector('.out-7').innerHTML = out7;
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -97,8 +138,15 @@ document.querySelector('.b-7').onclick = t7;
 //     4 5 6 7 8
 // Задача решается с помощью цикла.
 
-function t8() {
+let out8 = '';
 
+function t8() {
+    let input81 = +document.querySelector('.i-81').value;
+    let input82 = +document.querySelector('.i-82').value;
+    for (let i = input81; i >= 0; i++) {
+    out8 += i + '';
+    }
+document.querySelector('.out-8').innerHTML = out8;
 }
 
 document.querySelector('.b-8').onclick = t8;

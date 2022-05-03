@@ -52,3 +52,39 @@ document.querySelector('button').onclick = () => {
         }
     }
 }
+
+let out = ''; // переменная пустой строки
+
+for (let i=0; i < 10; i++) {
+// document.querySelector('#out').innerHTML = i; - выводит 9, потому что происходит перезатирание каждого последующего варианта 
+// вплоть до исполнения истинного условия
+// document.querySelector('#out').innerHTML += i + ' '; // благодаря += , выводит все истинные значения подряд через пробел, но каждый раз производя вывод
+if (i == 7) continue;
+out += i + ' ';
+//if (i == 7) break;
+}
+document.querySelector('#out').innerHTML = out;
+
+
+
+//  Task 6
+// Кнопка b-6 запускает функцию t6. Функция должна выводить в out-6 строку вида:
+//
+// ******<br>
+// ******<br>
+// ******<br>
+//
+//Задача решается с помощью цикла. В каждой итерации цикл выводит 6 звездочек без пробелов. Перенос строки - br. Количество строк (итераций, повторений) цикла вводит пользователь в i-6.
+//
+
+let out6 = '';
+
+function t6() {
+    let input6 = document.querySelector('.i-6');
+for (let i = 0; i < input6.value; i++ ){
+ out6 += '******' + '<br>';
+}
+document.querySelector('.out-6').innerHTML = out6; // очищаем поле
+}
+
+document.querySelector('.b-6').onclick = t6;
