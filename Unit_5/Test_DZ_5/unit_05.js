@@ -6,10 +6,10 @@
 let out1 = '';
 
 function t1() {
-for (let i = 1; i <= 50; i++) {
-    out1 += i + ' ';
-}
-document.querySelector('.out-1').innerHTML = out1;
+    for (let i = 1; i <= 50; i++) {
+        out1 += i + ' ';
+    }
+    document.querySelector('.out-1').innerHTML = out1;
 }
 
 document.querySelector('.b-1').onclick = t1;
@@ -23,10 +23,10 @@ document.querySelector('.b-1').onclick = t1;
 let out2 = '';
 
 function t2() {
-for (let i = 2; i <= 122; i= i + 2) {
-    out2 += i + ' ';
-}
-document.querySelector('.out-2').innerHTML = out2;
+    for (let i = 2; i <= 122; i = i + 2) {
+        out2 += i + ' ';
+    }
+    document.querySelector('.out-2').innerHTML = out2;
 }
 
 document.querySelector('.b-2').onclick = t2;
@@ -40,10 +40,10 @@ document.querySelector('.b-2').onclick = t2;
 let out3 = '';
 
 function t3() {
-for (let i = 25; i >= 7; i--) {
-    out3 += i + ' ';
-}
-document.querySelector('.out-3').innerHTML = out3;
+    for (let i = 25; i >= 7; i--) {
+        out3 += i + ' ';
+    }
+    document.querySelector('.out-3').innerHTML = out3;
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -56,10 +56,10 @@ document.querySelector('.b-3').onclick = t3;
 let out4 = '';
 
 function t4() {
-for (let i = 77; i >= 35; i = i - 3 ) {
-out4 += i + '_';
-}
-document.querySelector('.out-4').innerHTML = out4;
+    for (let i = 77; i >= 35; i = i - 3) {
+        out4 += i + '_';
+    }
+    document.querySelector('.out-4').innerHTML = out4;
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -73,15 +73,15 @@ document.querySelector('.b-4').onclick = t4;
 let out5 = '';
 
 function t5() {
-for (let i = 1; i <= 17; i++) {
-if (i % 2 == 1) {
-    out5 += i + '_' + '*';
-}
-else {
-    out5 += i + '_' + '**';
-}
-}
-document.querySelector('.out-5').innerHTML = out5;
+    for (let i = 1; i <= 17; i++) {
+        if (i % 2 == 1) {
+            out5 += i + '_' + '*';
+        }
+        else {
+            out5 += i + '_' + '**';
+        }
+    }
+    document.querySelector('.out-5').innerHTML = out5;
 }
 
 document.querySelector('.b-5').onclick = t5;
@@ -101,10 +101,10 @@ let out6 = '';
 
 function t6() {
     let input6 = document.querySelector('.i-6');
-for (let i = 0; i < input6.value; i++ ){
- out6 += '******' + '<br>';
-}
-document.querySelector('.out-6').innerHTML = out6; // очищаем поле
+    for (let i = 0; i < input6.value; i++) {
+        out6 += '******' + '<br>';
+    }
+    document.querySelector('.out-6').innerHTML = out6; // очищаем поле
 }
 
 document.querySelector('.b-6').onclick = t6;
@@ -122,9 +122,9 @@ let out7 = '';
 function t7() {
     let input7 = document.querySelector('.i-7').value;
     for (let i = input7; i >= 0; i--) {
-         out7 += i + ' ';
+        out7 += i + ' ';
     }
-document.querySelector('.out-7').innerHTML = out7;
+    document.querySelector('.out-7').innerHTML = out7;
 }
 
 document.querySelector('.b-7').onclick = t7;
@@ -143,10 +143,10 @@ let out8 = '';
 function t8() {
     let input81 = +document.querySelector('.i-81').value;
     let input82 = +document.querySelector('.i-82').value;
-    for (let i = input81; i >= 0; i++) {
-    out8 += i + '';
+    for (let i = input81; i <= input82; i++) {
+        out8 += i + ' ';
     }
-document.querySelector('.out-8').innerHTML = out8;
+    document.querySelector('.out-8').innerHTML = out8;
 }
 
 document.querySelector('.b-8').onclick = t8;
@@ -162,8 +162,20 @@ document.querySelector('.b-8').onclick = t8;
 // Задача решается с помощью цикла. Подсказка - вначале делаем проверку, а потом запускаем цикл.
 // цикл - один
 
-function t9() {
+let out9 = '';
 
+function t9() {
+    let input91 = +document.querySelector('.i-91').value;
+    let input92 = +document.querySelector('.i-92').value;
+    if (input91 > input92) {
+        let t = input91;
+        input91 = input92;
+        input92 = t;
+    }
+    for (let i = input91; i <= input92; i++) {
+        out9 += i + ' ';
+    }
+    document.querySelector('.out-9').innerHTML = out9;
 }
 
 document.querySelector('.b-9').onclick = t9;
@@ -173,8 +185,13 @@ document.querySelector('.b-9').onclick = t9;
 // Кнопка b-10 запускает функцию t10. Функция должна выводить в out-10 четные годы от 1950 до 2000 включительно.
 // Разделитель - пробел. Задача решается через цикл, а четность - через шаг (равный 2).
 
-function t10() {
+let out10 = '';
 
+function t10() {
+    for (let i = 1950; i <= 2000; i = i + 2) {
+        out10 += i + ' ';
+    }
+    document.querySelector('.out-10').innerHTML = out10;
 }
 
 document.querySelector('.b-10').onclick = t10;
@@ -187,9 +204,15 @@ document.querySelector('.b-10').onclick = t10;
 //     В результате должно получиться так:
 //     one 3 4 two
 
+let out11 = '';
 
 function t11() {
-
+    let elem = document.querySelectorAll('.div-11');
+    console.log(elem);
+    for (let i = 0; i < elem.length; i++) {
+        out11 += elem[i].innerHTML + ' ';
+    }
+    document.querySelector('.out-11').innerHTML = out11;
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -200,9 +223,11 @@ document.querySelector('.b-11').onclick = t11;
 // перебрать их с помощью цикла. Обращение к div выглядит так elem[i]
 // применить к каждому elem[i].style.background = ‘orange’
 
-
 function t12() {
-
+    let elem = document.querySelectorAll('.div-12');
+    for (let i = 0; i < elem.length; i++) {
+        elem[i].style.background = 'orange';
+    }
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -213,8 +238,13 @@ document.querySelector('.b-12').onclick = t12;
 // перебрать их с помощью цикла. Обращение к элементу выглядит так elem[i]
 // применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
 
-function t13() {
 
+
+function t13() {
+    let input13 = +document.querySelectorAll('.i-13').values;
+    for (let i = 0; i < input13.length; i++) {
+        input13[i].value = i + 1;
+    }
 }
 
 document.querySelector('.b-13').onclick = t13;
