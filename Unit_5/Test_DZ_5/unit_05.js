@@ -241,9 +241,9 @@ document.querySelector('.b-12').onclick = t12;
 
 
 function t13() {
-    let input13 = +document.querySelectorAll('.i-13').values;
-    for (let i = 0; i < input13.length; i++) {
-        input13[i].value = i + 1;
+    let elem = document.querySelectorAll('.i-13');
+    for (let i = 0; i < elem.length; i++) {
+        elem[i].value = i + 1;
     }
 }
 
@@ -256,8 +256,15 @@ document.querySelector('.b-13').onclick = t13;
 // вывести в out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
 
 
-function t14() {
 
+function t14() {
+    let elem = document.querySelectorAll('.i-14');
+
+    for (let i = 0; i < elem.length; i++) {
+        if (elem[i].checked) {
+            document.querySelector('.out-14').innerHTML = elem[i].value;
+        }
+    }
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -270,6 +277,15 @@ document.querySelector('.b-14').onclick = t14;
 
 function t15() {
 
+    let out15 = '';
+
+    for (let i = 0; i <= 10; i++) {
+        out15 += (10 - i) + ' ' + i + ' ';
+    }
+    document.querySelector('.out-15').innerHTML = out15;
 }
 
 document.querySelector('.b-15').onclick = t15;
+
+
+
