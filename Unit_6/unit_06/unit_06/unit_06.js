@@ -7,8 +7,8 @@
 
 function t1() {
     let out1 = document.querySelector('.out-1');
-    for (let i = 0; i < 4; i++) {
-        for (let k = 0; k < 4; k++) {
+    for (let i = 0; i < 3; i++) {
+        for (let k = 0; k < 3; k++) {
             out1.innerHTML += '*';
         }
         out1.innerHTML += '_';
@@ -31,10 +31,11 @@ document.querySelector('.b-1').onclick = t1;
 function t2() {
     let out2 = document.querySelector('.out-2');
     for (let i = 1; i < 4; i++) {
-        for (let k = 1; k < 4; k++) {
-            out2.innerHTML += '*' + '_';
-        }
         out2.innerHTML += i + '<br>';
+        for (let k = 1; k < 4; k++) {
+            out2.innerHTML += '*' + '_' + '\n';
+        }
+        out2.innerHTML += '<br>';
     }
 }
 
@@ -51,7 +52,13 @@ document.querySelector('.b-2').onclick = t2;
 // </pre>
 // <p>Решить задачу с помощью вложенных циклов. Внешний цикл выводит перенос строки br,  внутренний -  звездочки, знак подчеркивания.</p>
 function t3() {
-
+    let out3 = document.querySelector('.out-3');
+    for (let i = 0; i < 4; i++) {
+        for (let k = 0; k < 3; k++) {
+            out3.innerHTML += '*' + '_';
+        }
+        out3.innerHTML += '<br>';
+    }
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -62,7 +69,14 @@ document.querySelector('.b-3').onclick = t3;
 // 1_1 2 3 4 5 2_1 2 3 4 5 3_1 2 3 4 5
 // </pre>
 function t4() {
+    let out4 = document.querySelector('.out-4');
+    for (let i = 1; i < 4; i++) {
+        out4.innerHTML += i + '_';
+        for (let k = 1; k < 6; k++) {
+            out4.innerHTML += k + ' ';
+        }
 
+    }
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -77,9 +91,19 @@ document.querySelector('.b-4').onclick = t4;
 // </pre>
 // <p>Внешний цикл выводит перенос строки br. Вложенный цикл от 0 до 6 выводит либо 0 либо 1.</p>
 function t5() {
-
+    let out5 = document.querySelector('.out-5');
+    for (let i = 0; i < 3; i++) {
+        for (let k = 0; k < 6; k++) {
+            if (k % 2 == 0) {
+                out5.innerHTML += 1;
+            }
+            else {
+                out5.innerHTML += 0;
+            }
+        }
+        out5.innerHTML += '<br>';
+    }
 }
-
 document.querySelector('.b-5').onclick = t5;
 
 
