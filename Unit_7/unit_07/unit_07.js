@@ -4,11 +4,9 @@
 let a1 = 8;
 function t1() {
     let out1 = document.querySelector('.out-1');
-out1.innerHTML = a1;
+    out1.innerHTML = a1;
 
 }
-
-
 
 document.querySelector('.b-1').onclick = t1;
 
@@ -21,7 +19,7 @@ document.querySelector('.b-1').onclick = t1;
 
 let a2 = 8;
 function t2() {
-   return a2;
+    return a2;
 }
 
 document.querySelector('.b-2').onclick = function () {
@@ -29,10 +27,12 @@ document.querySelector('.b-2').onclick = function () {
 }
 
 // Task 3.
-// Наша предыдущая функция, сильно все еще зависима от внешних переменных.Давайте сделаем ее более универсальной.Пусть функция t3 принимает 2 параметра и выводит их произведение.Допишите код функции так, чтобы она возвращала произведение двух чисел, переданных ей в качестве параметра a, b.Протестируем функцию на двух примерах, с помощью кнопок b-3-1 и b-3-2.
+// Наша предыдущая функция, сильно все еще зависима от внешних переменных.Давайте сделаем ее более универсальной.
+// Пусть функция t3 принимает 2 параметра и выводит их произведение.Допишите код функции так, чтобы она возвращала произведение двух чисел, переданных ей в качестве параметра a, b.
+// Протестируем функцию на двух примерах, с помощью кнопок b-3-1 и b-3-2.
 
 function t3(a, b) {
-
+    return a * b;
 }
 
 document.querySelector('.b-3-1').onclick = function () {
@@ -46,11 +46,11 @@ document.querySelector('.b-3-2').onclick = function () {
 // Напишите функцию t4 которая принимает ваш год рождения  и вычисляет ваш возраст. 
 
 function t4(year) {
-
+    return 2022 - year;
 }
 
 document.querySelector('.b-4').onclick = function () {
-    document.querySelector('.out-4').textContent = t4(1983);
+    document.querySelector('.out-4').textContent = t4(1986);
 }
 
 
@@ -59,20 +59,23 @@ document.querySelector('.b-4').onclick = function () {
 
 
 function t5(yourName) {
-
+    return 'Hello' + ' ' + yourName;
 }
 
 document.querySelector('.b-5').onclick = function () {
-    document.querySelector('.out-5').textContent = t5('Alex');
+    document.querySelector('.out-5').textContent = t5('Dmitriy');
 }
 
 
 
 // Task 6
 // Напишите функцию t6, которая принимает 2 числа и возвращает случайное целое число от первого до второго принятого параметра. 
+let a = 1;
+let b = 7;
 
 function t6(a, b) {
 
+    return Math.floor(Math.random() * (b - a + 1) + a);
 }
 
 document.querySelector('.b-6').onclick = function () {
@@ -84,7 +87,8 @@ document.querySelector('.b-6').onclick = function () {
 // Напишите функцию t7, которая возвращает случайный цвет в формате rgb(x, y, z)(строка).Где x, y, z - случайные числа в диапазоне[0, 255]. 
 
 function t7() {
-    //return `rgb(${t6(0,255)}....допишите сами
+
+    return `rgb(${t6(0, 255)}, ${t6(0, 255)}, ${t6(0, 255)})`;
 }
 
 document.querySelector('.b-7').onclick = function () {
@@ -93,10 +97,11 @@ document.querySelector('.b-7').onclick = function () {
 
 
 // Task 8
-// Напишите функцию t8, которая принимает строку в качестве параметра и возвращает результат с очищенными пробелами в начале и вконце строки.Т.е.принимает _hello_(где знак _ символизирует пробел), а возвращает hello.Для удаления пробелов - используйте trim.
+// Напишите функцию t8, которая принимает строку в качестве параметра и возвращает результат с очищенными пробелами в начале и вконце строки.
+// Т.е.принимает _hello_(где знак _ символизирует пробел), а возвращает hello.Для удаления пробелов - используйте trim.
 
 function t8(str) {
-
+    return str.trim();
 }
 
 document.querySelector('.b-8').onclick = function () {
@@ -108,7 +113,12 @@ document.querySelector('.b-8').onclick = function () {
 // Напишите функцию t9, которая принимает число и возвращает true, если число четное, и false если не четное. 
 
 function t9(num) {
-
+    if (num % 2 == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 document.querySelector('.b-9').onclick = function () {
@@ -120,6 +130,16 @@ document.querySelector('.b-9').onclick = function () {
 // Создайте функцию t10, которая принимает 2 числа и возвращает большее из них.В случае равенства - любое из чисел.
 
 function t10(a, b) {
+    if (a > b) {
+        document.querySelector('.out-10').textContent = a;
+    }
+    else if (a < b) {
+        document.querySelector('.out-10').textContent = b;
+    }
+    else if (a == b) {
+        document.querySelector('.out-10').textContent = a || b;
+    }
+    return a, b;
 
 }
 
