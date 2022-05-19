@@ -307,6 +307,16 @@ document.querySelector('.b-13').onclick = t13;
 let out14 = document.querySelector('.out-14');
 
 function t14() {
+let out14 = '';
+let elem = document.querySelectorAll('.i-14');
+let i = 0;
+
+    while (i < elem.length) {
+        if (elem[i].checked) {
+            document.querySelector('.out-14').textContent = elem[i].value;
+        }
+    i++; 
+}
 
 }
 
@@ -317,7 +327,17 @@ document.querySelector('.b-14').onclick = t14;
 // 10 0 9 1 8 2 7 3 6 4 5 5 4 6 3 7 2 8 1 9 0 10
 // Для вывода использовать цикл  while. Разделитель пробел.
 
+let out15 = document.querySelector('.out-15');
+
 function t15() {
+let out15 = '';
+let i = 0;
+
+while (i <= 10) {
+out15 += (10-i) + ' ' + i + ' ';
+i++;
+}
+document.querySelector('.out-15').textContent = out15;
 
 }
 
