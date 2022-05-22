@@ -1,104 +1,74 @@
-const one = document.querySelector('.one');
-
-one.style.width = '150px';
-one.style.paddingBottom = '40px';
-
-
-// console.log(one.style);
-
-one.classList.add('two', 'three'); // добавление классов 'two' и 'three'css в js
-one.classList.remove('three'); // удаление класса 'three'
-
-
-const toggle = document.querySelector('.toggle'); // toggle - это класс
-
-toggle.onclick = function () {
-    this.classList.toggle('three'); // this - имеет особое значение, зависящее от контекста, в котором оно применяется
-}
-
-//  Метод toggle объекта classList чередует заданный CSS класс элемента: добавляет класс, если его нет и удаляет, если есть. 
-// "toggle () отличная функция которая позволяет создавать красивые javascript эффекты для элементов страницы." 
-
-// атрибуты data
-console.log(one.getAttribute('data')); // читаю атрибут или добавляю
-console.log(document.querySelectorAll('link')[1].getAttribute('href')); // getAttribute - добавляет в консоль в данном случае ссылки
-let a1 = document.querySelector('p-18').getAttribute('data-b'); // с помощью getAttribute получаем data-b атрибут и с помощью querySelector параграф p-18
-
-one.setAttribute('data-num', 6); // добавили через setAttribute в код js
+let a = 'Иван';
+let b = 37;
+let z7 = 'Овен';
+let c = ['Иван', 37, 'Овен']; // 'Иван' - значение массива - index массива 0,1,2
+let d = [];
+console.log(c[0]); // 'Иван'
+console.log(c[1]); // 37
+console.log(c[5]); // undefined
+console.log(c); // вывод всего массива в консоль
+console.log(c.length); // length - 3
 
 
-let gas = document.querySelectorAll('.gas'); // с помощью атрибутов переносить данные в html
-for (let i = 0; i < gas.length; i++) {
-    gas[i].onclick = function () {
-        let gallons = document.querySelector('.gallons').value; // присвоение переменной gallons
-        let amount = this.getAttribute('data'); // присвоение data через getAttribute
-        console.log(gallons * amount); // вывод результата всех значений gallons * на их классификацию (10*1.2=12)
+
+let a1 = 'Ivan';
+let b67 = 43;
+let iiNumber = 2324;
+
+let zodiak = ['Козерог', 1, 1, 19];
+let man = ['Ivan', 'male', 176, 93, 'Ivanov'];
+console.log(zodiak);
+console.log(man);
+console.log('Длина массива');
+console.log(zodiak.length); // length 4
+console.log(man.length); // length 5
+console.log(man[4]); // имя переменной - man и индекс 4 - 93
+man[0] = 'Sergey'; // присвоение нового значения переменной
+console.log(man);
+
+// Перемена мест элементов массива местами с введением третьей переменной
+
+let a2 = [1,2,3,4];
+console.log(a2); // вывод [ 1, 2, 3, 4 ]
+
+let t = a2[0]; // создаем третью переменную и присваиваем ей значение массива a2[0] равное 1
+a2[0] = a2[3]; // присваиваем индексу a2[0] со значением 1 индекс a2[3] со значением 4
+// a2[3] = a2[a2.length-1] - можно взаимозаменять вот таким значением переменной массива a2.length-1
+console.log(a2); // вывод [ 4, 2, 3, 4 ]
+a2[3] = t;
+console.log(a2); // вывод [ 4, 2, 3, 1 ]
+console.log(a2[888]); // вывод undefined
+
+// // Способ №1
+
+// for(let i=0; i < a2.length; i++) {
+// document.querySelector('.out-1').innerHTML += a2[i] + ' ';
+// }
+
+// Способ №2
+
+let out = ' '; // объявление переменной, куда будет складываться весь вывод
+for(let i=0; i < a2.length; i++) {
+    if (a2[i] % 2 == 0) { // условие вывода четных чисел
+        out += a2[i] + '_ _'; // вывод на каждом цикле
     }
-}
-
-
-
-
-let a = document.createElement('div'); // создали div в js
-a.innerHTML = 'Hello!'; // добавили текст Hello! классу div
-a.classList.add('one'); // добавили класс one классу div
-a.onclick = function () { // добавили onclick, по которому выполняется функция function ()
-    alert('hello');
-}
-
-document.querySelector('.test').appendChild(a); // вставление одного элемента внутрь другого
-
-
-console.log(a);
-
-out14.prepend(a);// Метод prepend позволяет вставить в начало какого-либо элемента другой элемент: родитель.prepend(элемент или строка)
-// Метод .before() добавляет текст перед заданным элементом.
-// Метод .after() добавляет текст после заданного элемента.
-// Метод .replaceWith() заменяет одни элементы другими. 
-// Метод setAttribute позволяет изменить значение заданного атрибута какого-либо тега, элемент.setAttribute(имя атрибута, новое значение)
-
-//  Task 4
-// По нажатию кнопки b-4 запускайте функцию f4, которая делает toggle класса bg-4 для блока out-4.
-
-const out4 = document.querySelector('.out-4');
-
-function f4() {
-
-    out4.classList.toggle('bg-4');
-
-}
-
-document.querySelector('.b-4').onclick = f4;
-
-
-
-
-//  Task 7
-// По нажатию кнопки b-7 запускайте функцию f7, которая присваивает блокам out-7 класс .bg-7. Обратите внимание, что данных блоков больше одного, следовательно нужен цикл.
-
-let blocks7 = document.querySelectorAll('.out-7');
-
-function f7() {
-
-    for (let i = 0; i < blocks7.length; i++) { // сам массив blocks7, а это blocks7[i] - элемент массива
-        blocks7[i].classList.add('bg-7');
     }
-}
+    document.querySelector('.out-1').innerHTML = out; // вывод сразу всех значений цикла в строку
 
-document.querySelector('.b-7').onclick = f7;
+// находим max в массиве - ЗАПОМНИТЬ!!!
+    let b1 = [45,2,5,23,43,1,2,6,12]; // проверка работы массива, подсунуть ей более простые значения, н-р [0,1,2,3,4]
+    let max = b1[0] // внутри b1[0] лежит 4
+    for (let i=0; i < b1.length; i++) {
+        if (b1[i] > max) {
+            max = b1[i]; // присвоение max значения 
+        }
+    }
+    console.log('max: '+max); // вывод в консоли значения max: и числа 43(через +max)
 
+    // находим sum(общая сумма всех элементов массива) в массиве - ЗАПОМНИТЬ!!!
 
-
-//  Task 11
-// Добавьте кнопку .b-11, которая запускает функцию f11. Функция создает через createElement div c текстом 25 и добавляет его через append в out-11.
-
-let out11 = document.querySelector('.out-11');
-
-function f11() {
-    let a = document.createElement('div');
-    a.textContent = '25';
-    out11.appendChild(a);
-
-}
-
-document.querySelector('.b-11').onclick = f11;
+    let sum = 0; // проссто равна нулю, это корзинка, куда складывается решение
+    for (let i=0; i < b1.length; i++) {
+      sum = sum + b1[i];
+    }
+    console.log('sum: '+sum); // вывод в консоли суммы элементов
