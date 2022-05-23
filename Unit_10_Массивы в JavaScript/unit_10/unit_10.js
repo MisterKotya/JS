@@ -1,10 +1,11 @@
 // Task 1
 //Создайте массив ar1 содержащий строки, числа, булевы значения. Выведите его в .out-1. Вывод - по нажатию кнопки b-1
 
-// let ar1 = // переменную обьявляем здесь!!!!
+let ar1 = ['Ivan', 35, true];
+let out1 = document.querySelector('.out-1');
 
 function f1() {
-    //ваш_элемент.innerHTML = ar1; // да так можно выводить!!!!
+    out1.innerHTML = ar1;
 }
 
 document.querySelector('.b-1').onclick = f1;
@@ -12,14 +13,16 @@ document.querySelector('.b-1').onclick = f1;
 // Task 2
 //Создайте массив ar2 содержащий строки, числа, булевы значения. Выведите его в div.out-2. Используйте шаблон вывода из кода в JS. Вывод - по нажатию кнопки b-2
 
-// let ar2 = // переменную обьявляем здесь!!!!
+let ar2 = ['Dasha', 35, false];
+let out2 = document.querySelector('.out-2');
 
 function f2() {
-    // let out = '';
-    // for (let i = 0; i < ar2.length; i++) {
-    //     out +=arr2[i]+' ';
-    // }
-    // document.querySelector('.out-2').innerHTML = out;
+    let out = '';
+    for (let i = 0; i < ar2.length; i++) {
+        out += ar2[i] + ' ';
+    }
+    out2.textContent += ar2;
+    document.querySelector('.out-2').innerHTML = out;
 }
 
 document.querySelector('.b-2').onclick = f2;
@@ -30,9 +33,11 @@ document.querySelector('.b-2').onclick = f2;
 // Вывод в out-3
 // Тест допустим массив [1,2,3] вывод - 3
 
-// let ar3 =  // переменную обьявляем здесь!!!!
+let ar3 = ['Sasha', 'Masha', 'Petya', 43, 57, 97, true];
+let out3 = document.querySelector('.out-3');
 
 function f3() {
+    out3.textContent = ar3.length;
 }
 
 document.querySelector('.b-3').onclick = f3;
@@ -44,9 +49,11 @@ document.querySelector('.b-3').onclick = f3;
 // Вывод в out-4
 // Тест допустим массив [1,2,3,4,5,6,7,8,9,10] вывод: 1 4 9
 
-// let ar4 =  // переменную обьявляем эту здесь!!!!
+let ar4 = [10, 15, 23, 34, 56, 78, 95, 44, 89, 12, 17];
+out4 = document.querySelector('.out-4');
 
 function f4() {
+    out4.textContent += ar4[0] + ' ' + ar4[3] + ' ' + ar4[8];
 }
 
 document.querySelector('.b-4').onclick = f4;
@@ -58,9 +65,12 @@ document.querySelector('.b-4').onclick = f4;
 // Вывод в out-5
 // Тест допустим массив [1,2,3,4,5,6,7,8,9,10] вывод: 8
 
-// let ar5 =
+let ar5 = [15, 67, 5, 32, 7, 11, 18];
+out5 = document.querySelector('.out-5');
+
 
 function f5() {
+    out5.textContent += ar5[0] + ar5[2] + ar5[3];
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -71,36 +81,54 @@ document.querySelector('.b-5').onclick = f5;
 // Вывод - по нажатию кнопки b-6
 // Вывод в out-6
 
-// let ar6 =
+let ar6 = ['Dmitrii', 'Capricorn', 16, 'January'];
+out6 = document.querySelector('.out-6');
 
 function f6() {
+
+    out6.textContent += ar6[0] + ' ' + ar6[1] + ' ' + ar6[2] + ' ' + ar6[3];
+
 }
 
 document.querySelector('.b-6').onclick = f6;
 
 // Task 7
-// Добавьте в массив ar7  значения 'vietnam' с индексом 7 , 'turkey' с индексом 6, 'italy' с индексом 5. Добавление элементов сделайте в f7. Выведите массив на страницу в .out-7. Разделитель - пробел. Обращаю ваше внимание! Это программирование. Поэтому - никаких больших букв и тому подобного!!!!
+// Добавьте в массив ar7  значения 'vietnam' с индексом 7 , 'turkey' с индексом 6, 'italy' с индексом 5. 
+// Добавление элементов сделайте в f7. Выведите массив на страницу в .out-7. Разделитель - пробел. Обращаю ваше внимание! 
+// Это программирование. Поэтому - никаких больших букв и тому подобного!!!!
 // Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
 // Вывод - по нажатию кнопки b-7
 // Вывод в out-7
 
 let ar7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
+out7 = document.querySelector('.out-7');
 
 function f7() {
+    ar7[7] = 'vietnam';
+    ar7[6] = 'turkey';
+    ar7[5] = 'italy';
+    out7.textContent += ar7[0] + ' ' + ar7[1] + ' ' + ar7[2] + ' ' + ar7[3] + ' ' + ar7[4] + ' ' + ar7[5] + ' ' + ar7[6] + ' ' + ar7[7];
 }
 
 document.querySelector('.b-7').onclick = f7;
 
 // Task 8
-// Добавьте в массив ar8 третий (индекс 3) элемент равный 3.14, 4 (индекс 4) элемент равный 17, 6 элемент (индекс 6) равный 5. Выведите массив в .out-8. Разделитель - дефис. В .out-8-1 выведите длину массива ar8.
-
+// Добавьте в массив ar8 третий (индекс 3) элемент равный 3.14, 4 (индекс 4) элемент равный 17, 6 элемент (индекс 6) равный 5. Выведите массив в .out-8. 
+// Разделитель - дефис. В .out-8-1 выведите длину массива ar8.
 // Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
 // Вывод - по нажатию кнопки b-8
 // Вывод в out-8
 
 let ar8 = [];
+out8 = document.querySelector('.out-8');
+out81 = document.querySelector('.out-8-1');
 
 function f8() {
+    ar8[3] = 3.14;
+    ar8[4] = 17;
+    ar8[6] = 5;
+    out8.textContent += ar8[3] + '-' + ar8[4] + '-' + ar8[6];
+    out81.textContent += ar8.length;
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -112,8 +140,11 @@ document.querySelector('.b-8').onclick = f8;
 // Вывод в out-9
 
 let ar9 = [100, 200, 300, 400, 700, 121];
+out9 = document.querySelector('.out-9');
 
 function f9() {
+    console.log(ar9.length);
+    out9.textContent += ar9[5];
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -125,8 +156,11 @@ document.querySelector('.b-9').onclick = f9;
 // Вывод в out-10
 
 let ar10 = [100, 200, 300, 400, 700, 121];
+out10 = document.querySelector('.out-10');
 
 function f10() {
+    console.log(ar10.length);
+    out10.textContent += ar10[1] + ar10[5];
 }
 
 document.querySelector('.b-10').onclick = f10;
@@ -134,15 +168,18 @@ document.querySelector('.b-10').onclick = f10;
 
 // Task 11
 // Напишите функцию, которая меняет местами второй (индекс 2) и четвертый (индекс 4) элемент массива ar11 и выводит его в out-11. Разделитель - пробел.
-
 // Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
 // Вывод - по нажатию кнопки b-11
 // Вывод в out-11
 
 let ar11 = [2, 3, 4, 5, 6, 7];
+let out11 = document.querySelector('.out-11');
 
 function f11() {
-
+    let t = ar11[2];
+    ar11[2] = ar11[4];
+    ar11[4] = t;
+    out11.textContent += ar11[2] + ' ' + ar11[4];
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -155,9 +192,14 @@ document.querySelector('.b-11').onclick = f11;
 // Вывод в out-12
 
 let ar12 = ['test', 'west', 'list', 'class', 'best'];
+out12 = document.querySelector('.out-12');
 
 function f12() {
-
+    console.log(ar12.length);
+    let t = ar12[0];
+    ar12[0] = ar12[4];
+    ar12[4] = t;
+    out12.textContent += ar12[0] + ' ' + ar12[4];
 }
 
 document.querySelector('.b-12').onclick = f12;
