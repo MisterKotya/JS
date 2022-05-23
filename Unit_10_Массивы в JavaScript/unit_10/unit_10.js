@@ -192,7 +192,7 @@ document.querySelector('.b-11').onclick = f11;
 // Вывод в out-12
 
 let ar12 = ['test', 'west', 'list', 'class', 'best'];
-out12 = document.querySelector('.out-12');
+let out12 = document.querySelector('.out-12');
 
 function f12() {
     console.log(ar12.length);
@@ -214,9 +214,10 @@ document.querySelector('.b-12').onclick = f12;
 
 
 let ar13 = ['test', 'west', 'list', 'class', 'best'];
+let out13 = document.querySelector('.out-13');
 
 function f13() {
-
+out13.textContent += '0' + ' ' + ar13[0] + ' ' + '1' + ' ' + ar13[1] + ' ' + '2' + ' ' + ar13[2] + ' ' + '3' + ' ' + ar13[3] + ' ' + '4' + ' ' + ar13[4];
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -229,12 +230,17 @@ document.querySelector('.b-13').onclick = f13;
 // Вывод в out-14
 
 let ar14 = [1, 2, 3, 'hello', 66];
+let out14 = document.querySelector('.out-14');
 
 function f14() {
-
+for (let i = ar14.length-1; i>=0; i-=1) {
+out14.textContent += ar14[i] + ' ';
+}
 }
 
 document.querySelector('.b-14').onclick = f14;
+
+
 
 // Task 15
 // Используя цикл выведите на страницу элементы массива ar15, которые больше нуля. Разделитель - пробел.
@@ -243,15 +249,22 @@ document.querySelector('.b-14').onclick = f14;
 // Вывод в out-15
 
 let ar15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
+let out15 = document.querySelector('.out-15');
 
 function f15() {
+    for(let i = 0; i < ar15.length; i++) {
+        if (ar15[i]> 0) {
+            out15.textContent += ar15[i] + ' ';
+        }
+    }
 
 }
 
 document.querySelector('.b-15').onclick = f15;
 
 // Task 16
-// Выполните перебор массива arr16. Четные элементы добавьте в массив ar16_even, нечетные в ar16_odd. Добавление в массив - по индексу, а не +=!!!!!. Протестируйте задачу на повторный запуск! Выведите ar16_odd в div.out-16-odd, а ar16_even в div.out-16-even. Разделитель - пробел.
+// Выполните перебор массива arr16. Четные элементы добавьте в массив ar16_even, нечетные в ar16_odd. Добавление в массив - по индексу, а не +=!!!!!. 
+// Протестируйте задачу на повторный запуск! Выведите ar16_odd в div.out-16-odd, а ar16_even в div.out-16-even. Разделитель - пробел.
 // Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
 // Вывод - по нажатию кнопки b-16
 // Вывод в out-16
@@ -259,8 +272,22 @@ document.querySelector('.b-15').onclick = f15;
 let ar16 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 let ar16_odd = [];
 let ar16_even = [];
+out16_odd = document.querySelector('.out-16-odd');
+out16_even = document.querySelector('.out-16-even');
 
 function f16() {
+    let ar16_odd = '';
+    let ar16_even = '';
+for(let i=0; i <= ar16.length; i++) {
+    if(ar16[i] % 2 == 0) {
+        ar16_even[i] = ar16[i]; 
+    }
+    else if(ar16[i] % 2 != 0)  {
+        ar16_odd[i] = ar16[i];
+    }
+}
+out16_even.textContent += ar16_even[i] + ' ';
+out16_odd.textContent += ar16_odd[i] + ' ';
 
 }
 
@@ -273,9 +300,14 @@ document.querySelector('.b-16').onclick = f16;
 // Вывод в out-17
 
 let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
+let out17 = document.querySelector('.out-17');
 
 function f17() {
-
+for(let i = 0; i <= ar17.length; i++) {
+    if (ar17[i] > 3) {
+        out17.textContent += ar17[i] + ' ';
+    }
+}
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -288,9 +320,16 @@ document.querySelector('.b-17').onclick = f17;
 // Вывод в out-18
 
 let ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
+let out18 = document.querySelector('.out-18');
+let max = ar18[0];
 
 function f18() {
-
+for (let i = 0; i < ar18.length; i++) {
+    if (ar18[i] > max) {
+        max = ar18[i];
+    }
+}
+out18.textContent += +max;
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -303,9 +342,16 @@ document.querySelector('.b-18').onclick = f18;
 // Вывод в out-19
 
 let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
+let out19 = document.querySelector('.out19');
+let min = ar19[0];
 
 function f19() {
-
+for(let i=0; i < ar19.length; i++) {
+    if(ar19[i] < min) {
+        min = ar19[i];
+    }
+}
+out19.textContent += -min;
 }
 
 document.querySelector('.b-19').onclick = f19;
