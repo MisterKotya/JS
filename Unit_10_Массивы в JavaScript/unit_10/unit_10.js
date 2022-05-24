@@ -276,20 +276,16 @@ out16_odd = document.querySelector('.out-16-odd');
 out16_even = document.querySelector('.out-16-even');
 
 function f16() {
-    let ar16_odd = '';
-    let ar16_even = '';
-    for (let i = 0; i <= ar16.length; i++) {
+    for (let i = 0; i < ar16.length; i++) {
         if (ar16[i] % 2 == 0) {
             ar16_even[i] = ar16[i];
-            // out16_even.textContent += ar16[i] + ' ';
+            out16_even.textContent += ar16_even[i] + ' ';
         }
-        else if (ar16[i] % 2 != 0) {
-            ar16_odd[i] = ar16[i];
-            // out16_odd.textContent += ar16[i] + ' ';
+        else {
+             ar16_odd[i] = ar16[i];
+             out16_odd.textContent += ar16_odd[i] + ' ';
         }
     }
-    // out16_even.textContent += ar16_even[i] + ' ';
-    // out16_odd.textContent += ar16_odd[i] + ' ';
 }
 
 document.querySelector('.b-16').onclick = f16;
