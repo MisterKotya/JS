@@ -187,20 +187,11 @@ document.querySelector('.b-10').onclick = f10;
 // Вывод в out-11
 
 let d11 = [2, 3, 4, 5, 6, 7];
-let input11 = document.querySelector('.i-11').value;
 let out11 = document.querySelector('.out-11');
 
 function f11() {
-
-    // for (let i = 0; i < d11.length; i++) {
-
-    if (d11.indexOf() !== -1) {
-        out11.textContent += index;
-    }
-    else {
-        out11.textContent = -1;
-    }
-    // }
+    let input11 = +document.querySelector('.i-11').value; // получаем число
+    out11.textContent += d11.indexOf(input11); // выводим результат
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -214,7 +205,17 @@ document.querySelector('.b-11').onclick = f11;
 
 let d12 = [6, 62, 60, 70, 1, 5];
 
+
 function f12() {
+    let input12 = +document.querySelector('.i-12').value;
+    let out12 = document.querySelector('.out-12');
+    out12.textContent = -1;
+    for (let i = 0; i < d12.length; i++) {
+        if (input12 == d12[i]) {
+            out12.textContent += i;
+            break;
+        }
+    }
 
 }
 
