@@ -254,8 +254,16 @@ document.querySelector('.b-13').onclick = f13;
 // Вывод в out-14
 
 let d14 = [];
+let out14 = document.querySelector('.out-14');
+
 
 function f14() {
+    let a = [];
+    let input14 = +document.querySelector('.i-14').value;
+    for (let i = 0; i < input14; i++) {
+        a[i] = 1;
+    }
+    d14 = a;
 
     showArr('.out-14', d14);
 }
@@ -269,10 +277,15 @@ document.querySelector('.b-14').onclick = f14;
 // Вывод в out-15
 
 let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
+let out15 = document.querySelector('.out-15');
 
 function f15() {
-
-
+    let input15 = +document.querySelector('.i-15').value;
+    if (d15.indexOf(input15) != -1)
+        console.log(input15);
+    else {
+        d15.push(input15);
+    }
     showArr('.out-15', d15);
 }
 
@@ -287,9 +300,11 @@ document.querySelector('.b-15').onclick = f15;
 let d16 = [];
 let d161 = [5, 6, 7, 8, 9];
 let d162 = [23, 24, 56, 87];
+let out16 = document.querySelector('.out-16');
 
 function f16() {
-
+    d16 = d16.concat(d161, d162);
+    console.log(d16);
     showArr('.out-16', d16);
 }
 
@@ -304,6 +319,7 @@ document.querySelector('.b-16').onclick = f16;
 let d17 = [];
 let d171 = ['a', 'b', 'c', 'd'];
 let d172 = [1, 2, 3, 4, 5];
+let out17 = document.querySelector('.out-17');
 
 function f17() {
 
@@ -320,9 +336,11 @@ document.querySelector('.b-17').onclick = f17;
 // Вывод в out-18
 
 let d18 = ['b', 'c', '45', 'e', 'z', 'y'];
+let out18 = document.querySelector('.out-18');
+let input18 = document.querySelector('.i-18').value;
 
 function f18() {
-
+    out18.textContent += d18.includes(input18);
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -336,23 +354,35 @@ document.querySelector('.b-18').onclick = f18;
 
 let d19 = ['Your', 'payment', 'method', 'will', 'automatically', 'be', 'charged', 'in', 'advance', 'every'];
 let maxString = '';
+let out19 = document.querySelector('.out-19');
 
 function f19() {
-
+    let max = d19[0];
+    for (let i = 0; i < d19.length; i++) {
+        if (d19[i].length > max.length) {
+            maxString += i;
+        }
+        else {
+            maxString += max;
+        }
+    }
+    document.querySelector('.out-19').textContent = maxString;
 }
 
 document.querySelector('.b-19').onclick = f19;
 
 // Task 20
-// Напишите функцию f20, которая применяет к массиву d20 метод join с параметрами и соединяет элементы массива в одну строку. Результат выводит в .out-20. Укажите мето так d20.join(''). Обратите внимание  - между апострофами нет пробела!!!.
+// Напишите функцию f20, которая применяет к массиву d20 метод join с параметрами и соединяет элементы массива в одну строку. Результат выводит в .out-20. Укажите мето так d20.join(''). 
+// Обратите внимание  - между апострофами нет пробела!!!.
 // Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
 // Вывод - по нажатию кнопки b-20
 // Вывод в out-20
 
 let d20 = [4, 5, 6, 7, 8, 9, 10];
+let out20 = document.querySelector('.out-20');
 
 function f20() {
-
+    out20.textContent += d20.join('');
 }
 
 document.querySelector('.b-20').onclick = f20;
